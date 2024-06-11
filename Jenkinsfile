@@ -9,7 +9,7 @@ node {
         sh 'npm install'
 
    stage 'Mocha test'
-        sh './node_modules/mocha/bin/mocha.js'
+        sh './node_modules/mocha/bin/mocha --exit test/helloworld_test.js'
 
    stage 'Cleanup'
         echo 'prune and cleanup'
