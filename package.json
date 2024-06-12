@@ -1,0 +1,23 @@
+{
+  "name": "helloworld",
+  "version": "1.0.0",
+  "description": "",
+  "main": "helloworld.js",
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SWDV660-ABlack/helloworld.git"
+  },
+  "author": "Aaron B",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SWDV660-ABlack/helloworld/issues"
+  },
+  "homepage": "https://github.com/SWDV660-ABlack/helloworld#readme",
+  "devDependencies": {
+    "mocha": "^10.4.0",
+    "zombie": "^6.1.4"
+  }
+}
