@@ -1,18 +1,22 @@
-#!groovy 
+#!groovy
 
 node {
-   stage 'Checkout'
+    stage('Checkout') {
         checkout scm
+    }
 
-   stage 'Setup'
-        sh 'npm config set registry  http://registry.npmjs.org/'
+    stage('Setup') {
+        sh 'npm config set registry http://registry.npmjs.org/'
         sh 'npm install'
+    }
 
-   stage 'Mocha test'
+    stage('Mocha test') {
         sh './node_modules/mocha/bin/mocha.js --exit test/helloworld_test.js'
+    }
 
-   stage 'Cleanup'
+    stage('Cleanup') {
         echo 'prune and cleanup'
         sh 'npm prune'
-        sh 'rm node_modules -rf'
+        sh 'rm -rf node_modules'
+    }
 }
