@@ -15,8 +15,15 @@ node {
     }
 
     stage('Cleanup') {
-        echo 'prune and cleanup'
-        sh 'npm prune'
-        sh 'rm -rf node_modules'
+        echo 'Starting cleanup'
+        try {
+            sh 'npm prune'
+            echo 'Prune completed'
+            sh 'rm -rf node_modules'
+            echo 'Node modules deleted'
+        } catch (Exception e) {
+            echo "Cleanup failed: ${e.message}"
+        }
+        echo 'Cleanup stage completed'
     }
 }
